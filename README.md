@@ -1,13 +1,12 @@
 
 # PocketnestSDK-Web
 
-![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.1-success)
+![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.-success)
 
 Web SDK for Pocketnest — a **minimal, framework‑agnostic** helper that either:
 - **Embeds** your Pocketnest flow in a page via an `<iframe>` (fills its parent container), or
 - **Opens** your Pocketnest flow in a **new browser tab**.
 
-No callbacks, no redirects — just pass a URL.
 
 ---
 
@@ -18,9 +17,7 @@ No callbacks, no redirects — just pass a URL.
 npm install @pocketnest/sdk-web
 # or
 yarn add @pocketnest/sdk-web
-# or
-pnpm add @pocketnest/sdk-web
-```
+
 
 Import and use:
 ```js
@@ -29,20 +26,6 @@ import PocketnestSDKWeb from "@pocketnest/sdk-web"; // if using default export s
 // or
 import { iFrame, open } from "@pocketnest/sdk-web"; // if your bundler supports named exports
 ```
-
-> The package exposes a UMD build, so CommonJS (`require`) also works.
-
-### Option B — `<script>` tag
-```html
-<script src="https://unpkg.com/@pocketnest/sdk-web@1.0.1/index.js"></script>
-<script>
-  // Access via global:
-  // window.PocketnestSDKWeb.iFrame
-  // window.PocketnestSDKWeb.open
-</script>
-```
-
----
 
 ## Usage
 
@@ -109,9 +92,7 @@ A ready-to-run example is in `examples/basic`. Open `examples/basic/index.html` 
 ---
 
 ## Version
-**1.0.1**
+**1.0.0**
 
 ---
 
-## License
-MIT

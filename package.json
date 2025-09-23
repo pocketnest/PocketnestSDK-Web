@@ -1,6 +1,6 @@
 {
   "name": "@pocketnest/sdk-web",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Pocketnest Web SDK (minimal iframe + open helpers)",
   "main": "index.js",
   "module": "index.js",
