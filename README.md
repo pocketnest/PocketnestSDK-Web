@@ -89,6 +89,8 @@ Opens the URL in a new browser tab using `window.open(url, "_blank", "noopener,n
 ## Example
 A ready-to-run example is in `examples/basic`. Open `examples/basic/index.html` in your browser or serve it with any static server.
 
+<img width="1133" height="923" alt="Screenshot 2025-09-23 at 15 47 15" src="https://github.com/user-attachments/assets/7bc0e1da-c7b9-436f-943d-e980afe08090" />
+
 ---
 
 ## Version
