@@ -26,16 +26,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Verify tag matches package.json version
-        # Run this check on push tags and on release events
         env:
           EVENT_NAME: ${{ github.event_name }}
           REF: ${{ github.ref }}
-          REF_NAME: ${{ github.ref_name }}                    # e.g. 1.0.0 on push tag
-          RELEASE_TAG: ${{ github.event.release.tag_name }}   # e.g. 1.0.0 on release
+          REF_NAME: ${{ github.ref_name }}                    # e.g. 1.0.0
+          RELEASE_TAG: ${{ github.event.release.tag_name }}   # e.g. 1.0.0
         run: |
           PKG_VERSION=$(node -p "require('./package.json').version")
 
-          # Determine TAG_VERSION based on event type
+          # Determine tag version for push tags or releases
           if [ "$EVENT_NAME" = "push" ] && [[ "$REF" == refs/tags/* ]]; then
             TAG_VERSION="$REF_NAME"
           elif [ "$EVENT_NAME" = "release" ]; then
