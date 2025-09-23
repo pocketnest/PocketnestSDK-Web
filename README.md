@@ -14,17 +14,17 @@ Web SDK for Pocketnest — a **minimal, framework‑agnostic** helper that eithe
 
 ### Option A — npm (recommended)
 ```bash
-npm install @pocketnest/sdk-web
+npm install pocketnest-sdk-web
 # or
-yarn add @pocketnest/sdk-web
+yarn add pocketnest-sdk-web
 
 
 Import and use:
 ```js
 // ESM
-import PocketnestSDKWeb from "@pocketnest/sdk-web"; // if using default export style from bundler
+import PocketnestSDKWeb from "pocketnest-sdk-web"; // if using default export style from bundler
 // or
-import { iFrame, open } from "@pocketnest/sdk-web"; // if your bundler supports named exports
+import { iFrame, open } from "pocketnest-sdk-web"; // if your bundler supports named exports
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Create a container with your desired size, then append the iframe.
 <div id="pocketnest-container" style="width:100%; max-width:960px; height:600px; border:1px solid #eee; border-radius:12px; overflow:hidden;"></div>
 
 <script type="module">
-  import { iFrame } from "@pocketnest/sdk-web";
+  import { iFrame } from "pocketnest-sdk-web";
 
   const url = "https://pocketnest-preprod.netlify.app"; // your hosted Pocketnest URL
   const container = document.getElementById("pocketnest-container");
@@ -59,7 +59,7 @@ const frame = iFrame({
 
 ### 2) Open in a new tab
 ```js
-import { open } from "@pocketnest/sdk-web";
+import { open } from "pocketnest-sdk-web";
 open("https://pocketnest-preprod.netlify.app");
 ```
 
