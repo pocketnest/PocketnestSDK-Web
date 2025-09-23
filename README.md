@@ -1,7 +1,7 @@
 
 # PocketnestSDK-Web
 
-![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.0-success)
+![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.1-success)
 
 Web SDK for Pocketnest — a **minimal, framework‑agnostic** helper that either:
 - **Embeds** your Pocketnest flow in a page via an `<iframe>` (fills its parent container), or
@@ -90,11 +90,6 @@ Opens the URL in a new browser tab using `window.open(url, "_blank", "noopener,n
 A ready-to-run example is in `examples/basic`. Open `examples/basic/index.html` in your browser or serve it with any static server.
 
 <img width="1133" height="923" alt="Screenshot 2025-09-23 at 15 47 15" src="https://github.com/user-attachments/assets/7bc0e1da-c7b9-436f-943d-e980afe08090" />
-
----
-
-## Version
-**1.0.0**
 
 ---
 
