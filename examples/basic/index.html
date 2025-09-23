@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PocketnestSDK-Web — Basic Example</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 24px; }
+      .card { max-width: 1000px; margin: 0 auto; background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; padding: 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+      .row { display: flex; gap: 16px; }
+      .col { flex: 1; }
+      .container { width: 100%; height: 600px; border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
+      button { padding: 10px 14px; border-radius: 8px; border: 1px solid #ddd; background: #0ea5e9; color: white; cursor: pointer; }
+      button:active { transform: translateY(1px); }
+      code { background: #f5f5f5; padding: 2px 4px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>PocketnestSDK-Web — Basic Example</h1>
+      <p>This page demonstrates both usage modes:</p>
+      <ol>
+        <li><strong>Embed</strong> via <code>iFrame()</code> into a container</li>
+        <li><strong>Open</strong> via <code>open()</code> in a new tab</li>
+      </ol>
+
+      <div class="row">
+        <div class="col">
+          <h3>Embedded iframe</h3>
+          <div id="pocketnest-container" class="container"></div>
+        </div>
+        <div class="col">
+          <h3>Open in new tab</h3>
+          <p>Click to open Pocketnest flow in a new tab:</p>
+          <button id="open-tab">Open Pocketnest</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load local SDK file (you could also pull from npm/unpkg) -->
+    <script src="../../index.js"></script>
+    <script>
+      // 1) Embed
+      const container = document.getElementById("pocketnest-container");
+      const frame = PocketnestSDKWeb.iFrame({
+        url: "https://pocketnest-preprod.netlify.app",
+        attributes: {
+          allow: "clipboard-write; fullscreen",
+          sandbox: "allow-scripts allow-forms allow-popups allow-same-origin"
+        }
+      });
+      container.appendChild(frame);
+
+      // 2) Open in new tab
+      document.getElementById("open-tab").addEventListener("click", () => {
+        PocketnestSDKWeb.open("https://pocketnest-preprod.netlify.app");
+      });
+    </script>
+  </body>
+</html>
