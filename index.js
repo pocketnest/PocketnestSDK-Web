@@ -23,6 +23,7 @@
    * Create an iframe element for the given URL.
    * @param {Object|string} options - Either a URL string or an options object.
    * @param {string} options.url - The URL to load in the iframe.
+   * @param {string} [options.accessToken] - Optional user session token.
    * @param {Object} [options.attributes] - Optional map of extra iframe attributes (e.g., { allow: "clipboard-write; fullscreen" }).
    * @returns {HTMLIFrameElement} The created iframe element (not yet attached to DOM).
    */
@@ -32,9 +33,13 @@
       throw new Error("PocketnestSDK-Web: iFrame requires a valid URL string.");
     }
     var extra = (options && options.attributes) || {};
+    let finalUrl = url;
+    if (extra.accessToken?.length > 0) {
+      finalUrl = finalUrl + "?token=" + extra.accessToken;
+    }
 
     var frame = document.createElement("iframe");
-    frame.src = url;
+    frame.src = finalUrl;
 
     // sensible defaults
     frame.setAttribute("loading", "lazy");
@@ -57,13 +62,18 @@
 
   /**
    * Open a URL in a new tab, with security flags.
-   * @param {string} url
+   * @param {string} url - The URL to open.
+   * @param {string} accessToken - (user session token)
    */
-  function open(url) {
+  function open(url, accessToken) {
     if (!url || typeof url !== "string") {
       throw new Error("PocketnestSDK-Web: open requires a valid URL string.");
     }
-    var win = window.open(url, "_blank", "noopener,noreferrer");
+    let finalUrl = url;
+    if (accessToken?.length > 0) {
+      finalUrl = finalUrl + "?token=" + accessToken;
+    }
+    var win = window.open(finalUrl, "_blank", "noopener,noreferrer");
     // Some browsers may block popups; win can be null. No return necessary.
     if (win && win.opener) {
       win.opener = null; // extra safety

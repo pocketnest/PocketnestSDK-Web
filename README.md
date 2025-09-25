@@ -77,6 +77,7 @@ Creates and returns an `<iframe>` with:
 
 **Parameters**
 - `options.url` (string, required): URL to load.
+- `options.accessToken` (string, optional): User session token.
 - `options.attributes` (object, optional): Extra attributes to set on the iframe element.
 
 > You must append the returned iframe to your desired container.
