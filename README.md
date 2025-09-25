@@ -1,7 +1,7 @@
 
 # PocketnestSDK-Web
 
-![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.1-success)
+![PocketnestSDK-Web](https://img.shields.io/badge/PocketnestSDK--Web-1.0.2-success)
 
 Web SDK for Pocketnest — a **minimal, framework‑agnostic** helper that either:
 - **Embeds** your Pocketnest flow in a page via an `<iframe>` (fills its parent container), or
