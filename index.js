@@ -37,7 +37,7 @@
     frame.src = url;
 
     // sensible defaults
-    frame.setAttribute("loading", "eager");
+    frame.setAttribute("loading", "lazy");
     frame.setAttribute("referrerpolicy", "no-referrer");
     frame.style.width = "100%";
     frame.style.height = "100%";
@@ -70,6 +70,12 @@
     }
   }
 
+  /**
+   * PocketnestSDK-Web API
+   * @namespace PocketnestSDKWeb
+   * @property {function(Object|string): HTMLIFrameElement} iFrame - Create an iframe element for the given URL or options.
+   * @property {function(string): void} open - Open a URL in a new tab with security flags.
+   */
   // Public API
   return { iFrame: iFrame, open: open };
 }));
