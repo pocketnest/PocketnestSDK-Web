@@ -39,9 +39,10 @@ Create a container with your desired size, then append the iframe.
   import { iFrame } from "pocketnest-sdk-web";
 
   const url = "https://pocketnest-preprod.netlify.app"; // your hosted Pocketnest URL
+  const accessToken = "your-user-session-token"; // used for automatic login user (session)
   const container = document.getElementById("pocketnest-container");
 
-  const frame = iFrame({ url });
+  const frame = iFrame({ url, accessToken });
   container.appendChild(frame);
 </script>
 ```
@@ -49,7 +50,8 @@ Create a container with your desired size, then append the iframe.
 You can also pass extra iframe attributes if needed:
 ```js
 const frame = iFrame({
-  url: "https://pocketnest-preprod.netlify.app",
+  url: "https://pocketnest-preprod.netlify.app", // your hosted Pocketnest URL
+  accessToken: "your-user-session-token", // used for automatic login user (session)
   attributes: {
     allow: "clipboard-write; fullscreen",
     sandbox: "allow-scripts allow-forms allow-popups allow-same-origin"
@@ -60,7 +62,8 @@ const frame = iFrame({
 ### 2) Open in a new tab
 ```js
 import { open } from "pocketnest-sdk-web";
-open("https://pocketnest-preprod.netlify.app");
+//url and accessToken
+open("https://pocketnest-preprod.netlify.app", "your-user-session-token");
 ```
 
 ---
