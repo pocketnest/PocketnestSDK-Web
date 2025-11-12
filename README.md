@@ -29,6 +29,8 @@ import { iFrame, open } from "pocketnest-sdk-web"; // if your bundler supports n
 
 ## Usage
 
+To get url and accessToken you need to check ##Pocketnest SSO Partner Procedures### documentation.
+
 ### 1) Embed as iframe (fills its parent container)
 Create a container with your desired size, then append the iframe.
 
